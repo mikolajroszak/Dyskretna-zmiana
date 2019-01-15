@@ -1,0 +1,2 @@
+# Dyskretna-zmiana
+Dyskretna zmiana
