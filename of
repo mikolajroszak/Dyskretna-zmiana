@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pl" class="lifting">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" id="viewport" content="width=1024, maximum-scale=2.0, user-scalable=yes">
+    <link href="/favicon.ico" rel="shortcut icon">
+    <meta content="9FGtwIgg5I0w1rIBqwydpRed73N835uGX3VBGm3VcsWxh30P7UrhcxJuyWeFsXuibyKtvmnnk2s//RvQEzJzcaJ0+HQHHnipgPRHxqWUL3OWYVWFT2OiwvodEQakXZCbzKCmrU79kNIfuPzpvn1li2bRKyMIOjYniRmaHY8HsPEvP5uj" name="__AjaxRequestVerificationToken">
+        <link type="text/css" rel="stylesheet" href="/venezia/styles/veneziaCssOfinance.built.css?v=FD62142E" />
+    <title>Orange Finanse – produkty bankowe dostarcza mBank</title>
+</head>
+<body class="lifting">
+    <div id="noresources" class="nocss" style="position: absolute; top: 0; right: 0; bottom: 0; left: 0; background-color: white; z-index: 100000">
+        <div style="position: absolute;top: 50%;left: 50%;margin-top: -100px;margin-left: -300px;width: 600px;height: 200px; background-color: white; z-index: 100000; line-height: 30px;">
+            <a href="http://www.mbank.pl/" title="mBank"><img src="/venezia/gfx/logo_nmb.gif?v=5BD81D34" alt="mBank"></a>
+            <p>Nastąpił bład podczas pobierania zasob&#243;w mBanku. Mogły one zostać zablokowane przez firewall, proxy albo konfigurację przeglądarki.  Naciśnij Ctrl+F5 lub Ctrl+Shift+F5 by spr&#243;bować jeszcze raz</p>
+            <script type="text/javascript">
+                window.onload = function () {
+                    if (!window.jQuery || !window.Ebre || !window.Backbone)
+                        document.getElementById("noresources").className = "";
+                }
+            </script>
+        </div>
+    </div>
+    <script type="text/javascript" src="/venezia/polyfills.js?v=631D374C"></script>
+    
+    
+    <!-- <script id="custom-elements-es5-adapter-loader">
+
+      if (window.customElements) {
+        var src, currTag, script;
+        src        = "/venezia/polyfills/webcomponentsjs/custom-elements-es5-adapter.js?v=D31D8CC6";
+        currTag    = document.getElementById('custom-elements-es5-adapter-loader');
+        script     = document.createElement('script');
+        script.src = src;
+        currTag.parentNode.insertBefore(script, currTag.nextSibling);
+      }
+    </script> -->
+    <script src="/venezia/polyfills/webcomponentsjs/custom-elements-es5-adapter.js?v=D31D8CC6"></script>
+    <script src="/venezia/polyfills/webcomponentsjs/webcomponents-loader.js?v=0118CEA3"></script>
+
+    <script type="text/javascript" src="/venezia/libs.js?v=B3ED2D28"></script>
+    <script type="text/javascript" src="/venezia/js/socket/socket.built.js?v=105C94B8"></script>
+    <script type="text/javascript">
+        Ebre.Locale = 'or';
+        Ebre.Entity = {
+            Current: '1142',
+            EntityPL: '1140',
+            EntityCZ: '6210',
+            EntitySK: '8360',
+            EntityOF: '1142',
+            isPL: function () {
+                return this.Current === this.EntityPL;
+            },
+            isCZ: function () {
+                return this.Current === this.EntityCZ;
+            },
+            isSK: function () {
+                return this.Current === this.EntitySK;
+            },
+            isCZSK: function () {
+                return this.Current === this.EntityCZ || this.Current === this.EntitySK;
+            },
+            isOF: function () {
+                return this.Current === this.EntityOF;
+            }
+        };
+
+        Ebre.Gemius = {
+            Identifier: '',
+            ScriptEnabled: false,
+            CustomerId: ''
+        };
+
+        Ebre.External = {
+            Identifier: '236cdd90-31d1-41dd-9b0f-79aaf4f9531e',
+            IsEnabled: 'true'
+        }
+
+        Ebre.PaymentAssistant = {
+            CountUnseenPaymentProposals:
+                '/or/FutureOperations/Calendar/OPER_GetUnseenPaymentProposalCount',
+            MarkPaymentProposalsAsSeen:
+                '/or/FutureOperations/Calendar/OPER_MarkPaymentProposalsAsSeen'
+        };
+
+        Ebre.Namespace("Ebre.User");
+        Ebre.User.isPB = false;
+        Ebre.User.Name = "Mikołaj Roszak";
+        Ebre.User.Avatar = "/venezia/gfxOrange/u/2_medium.PNG";
+        Ebre.Namespace("Ebre.Venezia.Login");
+
+
+        Ebre.Venezia.Login.ScriptUrl =  '/Scripts/Login/';
+        Ebre.Venezia.Login.TemplateUrl = '/Templates/Login/';
+        Ebre.Venezia.Login.ContentUrl = '/Content/Login/';
+        Ebre.Venezia.Login.LoginUrl = '/or/LoginMain/Account/JsonLogin';
+        Ebre.Venezia.Login.PreLoginUrl = '/or/LoginMain/Account/JsonGetPreLoginAndCms';
+        Ebre.Venezia.Login.KeepAliveUrl = '/or/LoginMain/Account/JsonSessionKeepAlive';
+        Ebre.Venezia.Login.LogoutUrl = '/or/LoginMain/Account/JsonLogout';;
+        Ebre.Venezia.Login.LogoutHref = '/or/LoginMain/Account/Logout';
+        Ebre.Venezia.Login.LazyLogoutUrl = '/or/LoginMain/Account/LazyLogout';
+        Ebre.Venezia.Login.CancelLazyLogoutUrl = '/or/LoginMain/Account/CancelLazyLogout';
+        Ebre.Venezia.Login.JsonGetProfilesUrl = '/or/LoginMain/Account/JsonGetProfiles';
+        Ebre.Venezia.Login.JsonActivateProfileUrl = '/or/LoginMain/Account/JsonActivateProfile';
+        Ebre.Venezia.Login.ServiceUrl = '/or/Login';
+        Ebre.Venezia.Login.LoadModuleUrl = '/or/LoginMain/Maelstrom/LoadModule';
+
+        Ebre.Namespace('Ebre.Survey');
+        Ebre.Survey.FeedbackEnabled = true;
+        Ebre.Survey.RodoEnabled = false;
+        Ebre.Survey.SurveyRodoUserCantPostpone = false;
+        Ebre.Survey.SurveyRodoRedirectionLink = "";
+
+        Ebre.Namespace("Ebre.Venezia.MenuItems");
+        Ebre.Venezia.MenuItems = [{"Children":[{"Children":[],"UrlArgs":"v=380a4a4369f3cc583a73147228b200a3","UniqueIdentifier":"history/historyAnalysis","Highlight":"history","FullUrl":"/or/Pfm/History/Index","Text":"historia","Index":-1,"IsExternalLink":false,"RoutingPrefix":"Pfm","IsLiftingLink":false},{"Children":[],"UrlArgs":"v=380a4a4369f3cc583a73147228b200a3","UniqueIdentifier":"history/reports","Highlight":"history","FullUrl":"/or/Pfm/History/Index","Text":"historia","Index":-1,"IsExternalLink":false,"RoutingPrefix":"Pfm","IsLiftingLink":false},{"Children":[],"UrlArgs":"v=6dc23e244518e5056f78bb61e388d1ac","UniqueIdentifier":"Desktop","Highlight":null,"FullUrl":"/or/MyDesktop/Desktop/Index","Text":"pulpit","Index":0,"IsExternalLink":false,"RoutingPrefix":"MyDesktop","IsLiftingLink":false},{"Children":[],"UrlArgs":"v=6b7b30754f249fffcbb1de93da104030","UniqueIdentifier":"periodicpayments","Highlight":"transfer","FullUrl":"/or/PeriodicPayments/PeriodicPayments/Index","Text":"Przelewy cykliczne","Index":1,"IsExternalLink":false,"RoutingPrefix":"PeriodicPayments","IsLiftingLink":false},{"Children":[],"UrlArgs":"v=534b5021461336aa5c7a48691a13f088","UniqueIdentifier":"transfer","Highlight":null,"FullUrl":"/or/MyTransfer/Recipient/Index","Text":"przelewy","Index":1,"IsExternalLink":false,"RoutingPrefix":"MyTransfer","IsLiftingLink":false},{"Children":[],"UrlArgs":"v=380a4a4369f3cc583a73147228b200a3","UniqueIdentifier":"history","Highlight":null,"FullUrl":"/or/Pfm/History/Index","Text":"historia","Index":2,"IsExternalLink":false,"RoutingPrefix":"Pfm","IsLiftingLink":false},{"Children":[],"UrlArgs":"v=9942d5bf1ae5d94cba5f64624edb79b8","UniqueIdentifier":"AddressBook","Highlight":null,"FullUrl":"/or/AddressBook/Start/Index","Text":"książka odbiorców","Index":3,"IsExternalLink":false,"RoutingPrefix":"AddressBook","IsLiftingLink":false},{"Children":[],"UrlArgs":"v=380a4a4369f3cc583a73147228b200a3","UniqueIdentifier":"budgets","Highlight":null,"FullUrl":"/or/Pfm/Budgets/Index","Text":"budżet","Index":4,"IsExternalLink":false,"RoutingPrefix":"Pfm","IsLiftingLink":false},{"Children":[],"UrlArgs":"v=9336f40e8e4c090a7e1fa4b2fc408e02","UniqueIdentifier":"calendar","Highlight":null,"FullUrl":"/or/FutureOperations/Calendar/Index","Text":"nadchodzące płatności","Index":5,"IsExternalLink":false,"RoutingPrefix":"FutureOperations","IsLiftingLink":false},{"Children":[],"UrlArgs":"v=STATIC_","UniqueIdentifier":"hostwitholdings","Highlight":"history","FullUrl":"/csite/frames.aspx?module=witholdings_list","Text":"historia","Index":998,"IsExternalLink":true,"RoutingPrefix":"","IsLiftingLink":false},{"Children":[],"UrlArgs":"v=STATIC_","UniqueIdentifier":"hosthistory","Highlight":"history","FullUrl":"/csite/frames.aspx?module=account_oper_list","Text":"historia","Index":999,"IsExternalLink":true,"RoutingPrefix":"","IsLiftingLink":false},{"Children":[],"UrlArgs":"v=STATIC_","UniqueIdentifier":"DoPotwierdzenia","Highlight":null,"FullUrl":"/csite/frames.aspx?module=suspended_transaction_list","Text":"do potwierdzenia","Index":1001,"IsExternalLink":true,"RoutingPrefix":"","IsLiftingLink":false},{"Children":[],"UrlArgs":"v=ae108b763e6d5aeee45cc462c04a2516","UniqueIdentifier":"Koszyk","Highlight":null,"FullUrl":"/or/Basket/Basket/Index","Text":"koszyk przelewów","Index":1002,"IsExternalLink":false,"RoutingPrefix":"Basket","IsLiftingLink":false}],"UrlArgs":"v=9942d5bf1ae5d94cba5f64624edb79b8","UniqueIdentifier":"Payments","Highlight":null,"FullUrl":"/or/AddressBook/Start/Index","Text":"płatności","Index":0,"IsExternalLink":false,"RoutingPrefix":"AddressBook","IsLiftingLink":false},{"Children":[{"Children":[],"UrlArgs":"v=d41d8cd98f00b204e9800998ecf8427e","UniqueIdentifier":"mAssistant","Highlight":null,"FullUrl":"/or/mAssistant/mAssistant/Index","Text":"podsumowanie","Index":0,"IsExternalLink":false,"RoutingPrefix":"mAssistant","IsLiftingLink":false},{"Children":[],"UrlArgs":"v=9ef829f0496f06450f7b3a94eb776bc6","UniqueIdentifier":"accounts","Highlight":null,"FullUrl":"/or/Accounts/Accounts/Index","Text":"rachunki","Index":10,"IsExternalLink":false,"RoutingPrefix":"Accounts","IsLiftingLink":false},{"Children":[],"UrlArgs":"v=84cc57bd5bfd04e0774515cfe3bfc9a6","UniqueIdentifier":"Savings","Highlight":null,"FullUrl":"/or/Savings/SavingsCalculator/Index","Text":"lokaty","Index":20,"IsExternalLink":false,"RoutingPrefix":"Savings","IsLiftingLink":false},{"Children":[],"UrlArgs":"v=43a81dc818777c9dee3c35b93d797dc5","UniqueIdentifier":"cards","Highlight":null,"FullUrl":"/or/Cards/Cards/Index","Text":"karty","Index":30,"IsExternalLink":false,"RoutingPrefix":"Cards","IsLiftingLink":false},{"Children":[],"UrlArgs":"v=2216adf38c6a176d0013b28afd8fc2e2","UniqueIdentifier":"loans","Highlight":null,"FullUrl":"/or/Loans/Loans/Index","Text":"kredyty","Index":42,"IsExternalLink":false,"RoutingPrefix":"Loans","IsLiftingLink":false}],"UrlArgs":"v=9ef829f0496f06450f7b3a94eb776bc6","UniqueIdentifier":"MyFinances","Highlight":null,"FullUrl":"/or/Accounts/Accounts/Index","Text":"moje finanse","Index":1,"IsExternalLink":false,"RoutingPrefix":"Accounts","IsLiftingLink":false},{"Children":[{"Children":[],"UrlArgs":"v=bd93d32b61382f6d33f99ae86b75e763","UniqueIdentifier":"market","Highlight":null,"FullUrl":"/or/market/Offer/Index","Text":"oferta bankowa","Index":0,"IsExternalLink":false,"RoutingPrefix":"market","IsLiftingLink":false},{"Children":[],"UrlArgs":"v=0acc07b3c326199a07e9593139f52b79","UniqueIdentifier":"mOkazje","Highlight":null,"FullUrl":"/or/Adv/MOffers/Index","Text":"strefa korzyści","Index":1,"IsExternalLink":false,"RoutingPrefix":"Adv","IsLiftingLink":false},{"Children":[],"UrlArgs":"v=0acc07b3c326199a07e9593139f52b79","UniqueIdentifier":"inbox","Highlight":null,"FullUrl":"/or/Adv/Inbox/Index","Text":"wiadomości","Index":3,"IsExternalLink":false,"RoutingPrefix":"Adv","IsLiftingLink":false},{"Children":[],"UrlArgs":"v=210bfd7ea75b14aaff72fb493eae3d47","UniqueIdentifier":"Settings","Highlight":null,"FullUrl":"/or/MySettings/Settings/Index","Text":"Panel ustawień","Index":31,"IsExternalLink":false,"RoutingPrefix":"MySettings","IsLiftingLink":false},{"Children":[],"UrlArgs":"v=bc69a0ace6a967dbb591b655495981c3","UniqueIdentifier":"applications","Highlight":null,"FullUrl":"/or/applications/List/Index","Text":"złożone wnioski","Index":40,"IsExternalLink":false,"RoutingPrefix":"applications","IsLiftingLink":false}],"UrlArgs":"v=bc69a0ace6a967dbb591b655495981c3","UniqueIdentifier":"shopping","Highlight":null,"FullUrl":"/or/applications/List/Index","Text":"oferta dla Ciebie","Index":2,"IsExternalLink":false,"RoutingPrefix":"applications","IsLiftingLink":false},{"Children":[{"Children":[],"UrlArgs":"v=2672825181675005f8eefcd37b856646","UniqueIdentifier":"contact","Highlight":null,"FullUrl":"/or/Contact/Orange/Index","Text":"obsługa","Index":0,"IsExternalLink":false,"RoutingPrefix":"Contact","IsLiftingLink":false}],"UrlArgs":"v=2672825181675005f8eefcd37b856646","UniqueIdentifier":"contactMain","Highlight":null,"FullUrl":"/or/Contact/Orange/Index","Text":"obsługa","Index":3,"IsExternalLink":false,"RoutingPrefix":"Contact","IsLiftingLink":false}];
+
+        Ebre.Namespace("Ebre.Venezia.Urls");
+        Ebre.Venezia.Urls.ScriptUrls = {
+            root: 'venezia/',
+            shared: 'venezia/js/'
+        };
+        Ebre.Venezia.Urls.ContentUrls = {
+            root: '/venezia/',
+            gfx: '/venezia/gfx/',
+            less: '/venezia/less/',
+            shared: '/venezia/'
+        };
+
+        Ebre.Namespace("Ebre.Venezia.Effects");
+        Ebre.Venezia.Effects.IsAnimationOn = true;
+
+        Ebre.Venezia.Urls.SettingsSections = {
+            Main: '/or/MySettings/Settings/Menu'
+        };
+
+        Ebre.Venezia.Settings = {
+            IsDebuggingEnabled: false,
+            CssPath: '/MySettings/Resources/par_axd/MySettings?file=Styles%2Fstyles.less.o.css&amp;v=210bfd7ea75b14aaff72fb493eae3d47'
+        };
+
+        Ebre.Venezia.Urls.ErrorPages = {
+            Emitter: '/or/Errors/Emit'
+        };
+
+        Ebre.Venezia.Urls.Whirlwind = '/or/Adv';
+
+        Ebre.Namespace("Ebre.Venezia.Urls.TasksCenter");
+        Ebre.Namespace("Ebre.Venezia.TasksCenter");
+        Ebre.Venezia.Urls.TasksCenter.TopBar = '/or/TasksCenter/TopBar';
+        Ebre.Venezia.TasksCenter.ShowTasksCenter = false;
+        Ebre.Venezia.IsGamification = false;
+        Ebre.Venezia.IsIKZE = false;
+
+        Ebre.Venezia.ErrorMap = {"400":"/errors/error.html","405":"/errors/error.html","401":"/errors/session.html","403":"/errors/404.html","404":"/errors/404.html","451":"/errors/onlyOneTab.html","452":"/errors/clearCookies.html","453":"/errors/453.html","500":"/errors/error.html","501":"/errors/error.html","502":"/errors/error.html","503":"/errors/error.html","504":"/errors/error.html","505":"/errors/error.html","520":"/errors/alarm.html","521":"/errors/technicalbreak.html","522":"/errors/522.html"};
+        Ebre.Venezia.ErrorSignificanceLevel = {"IgnoreAllErrors":"0","IgnoreUnhandledErrors":"1","IgnoreHandledErrors":"2"};
+
+        Ebre.Venezia.ProfileData = {"iProfiles":{"appURL":"#market/group/IO","active":true,"profiles":[{"profileCode":"T","active":true,"previouslyActive":false,"firmName":null}]},"fProfiles":{"appURL":"#market/group/BO","active":false,"profiles":[]}};
+        Ebre.Venezia.Profile = 'Individual';
+
+        Ebre.Venezia.ProfileContext = {
+            IsIndividual: true,
+            IsFirm: false
+            };
+
+        Ebre.Venezia.LoggerConfig = {"AppenderLevelThreshold":"log4javascript.Level.ERROR","LogMessageBatchSize":15,"SendingTimerInterval":60000,"IsTimed":"true"};
+        Ebre.Venezia.LoggerConfig.AppenderLevelThreshold = eval(Ebre.Venezia.LoggerConfig.AppenderLevelThreshold);
+        Ebre.Venezia.LoggerConfig.ApiUrl = '/or/Logger/Log';
+
+        Ebre.Venezia.JsLoggerConfig = {"JsLoggerEnabled":true,"UiNotificationErrorsEnabled":true,"ConsoleErrorsEnabled":true,"XhrErrorsEnabled":true,"FullPageErrorsEnabled":true,"MaxMessagesPerType":100,"ServerSideEnabled":true,"RequestHeaderFragmentEnabled":true,"RequestBodyFragmentEnabled":false,"RequestHeaderFragmentMaxLength":50,"RequestBodyFragmentMaxLength":100};
+        Ebre.Venezia.JsLoggerConfig.ApiUrl = '/or/LoggingFacade/Log';
+
+        Ebre.Venezia.LoadedModules_raw = ["AccountingInvoicing","Accounts","AddressBook","applications","AuthService","Basket","BlikStatus","Brokerage","Cards","ClientActivationMain","Contact","MyDesktop","escrow","Forex","FutureOperations","HostHistory","melements","Insurance","InvestmentFunds","ISContact","Loans","TrustedProfileLogin","psd2consents","mtransfer","placezorange","LoginMain","market","mAssistant","MemberGetsMember","mPublic","mtransfermain","placezorangemain","PeriodicPayments","Pfm","psd2consentsmain","SavingGoals","Savings","MySettings","TasksCenter","MyTransfer","TrustedProfile","UniWniosekmain","Adv"];
+        Ebre.Venezia.AllModules_raw = ["Accounts","AddressBook","Cards","Contact","ISContact","MyDesktop","Gamification","MyTransfer","PeriodicPayments","Pfm","FutureOperations","Savings","MySettings","applications","market","WhirlWind","Login","AuthHub","MyFacebook","MyHostHistory","Inbox"];
+        Ebre.Venezia.ModuleAboutToBeUnloadedEventName = 'ModuleAboutToBeUnloadedEvent';
+
+        Ebre.IbanToCrc = "30 1234 1234 1234 1234 1234 1234";
+
+        Ebre.Namespace('Ebre.Wizard');
+        Ebre.Wizard.IsActive = false;
+        Ebre.Wizard.ShowWelcomeScreen = true;
+        Ebre.Wizard.Urls = {
+            CloseWizard: '/or/Onboarding/CloseWizard',
+            HideWelcomeScreen: '/or/Onboarding/HideWelcomeScreen'
+        };
+
+        Ebre.Namespace('Ebre.CreateProfile');
+        Ebre.CreateProfile.CreateIndividualProfileEnabled = false;
+        Ebre.CreateProfile.CreateCompanyProfileEnabled = true;
+        Ebre.CreateProfile.IndividualAccountUWLink = '';
+        Ebre.CreateProfile.IndividualAccountButtonLiteral = 'otw&#243;rz konto osobiste';
+        Ebre.CreateProfile.CompanyAccountUWLink = '/or/UW/Submit?url=%2Fwebforms%2Ff_rb%2Findex.html%3Foption%3Dib_desktop%26rurl=or';
+        Ebre.CreateProfile.CompanyAccountButtonLiteral = 'otw&#243;rz rachunek firmowy';
+
+        Ebre.Venezia.Logo = 'https://orangefinanse.com.pl/contentcache/logo/pl/images/';
+        Ebre.Venezia.Rodo = true;
+        Ebre.Venezia.RodoMarketing = true;
+
+        Ebre.Namespace('Ebre.Chat');
+        Ebre.Chat.IsOn = false;
+        Ebre.Venezia.OnboardingNotificationEnabled = false;
+
+        Ebre.Venezia.UserBehaviourNotification = {
+            FeatureSwitchEnabled:  false,
+            EnabledForUser: false
+        }
+
+        Ebre.Namespace('Ebre.IB30.FeatureFlags');
+        Ebre.IB30.FeatureFlags.IB30ProfileSelectorEnabled = false;
+
+        Ebre.IB30.FeatureFlags.IsHistoryLiftingEnabled = false;
+        Ebre.IB30.FeatureFlags.IsLiftingEnabled = false;
+        Ebre.IB30.FeatureFlags.IsPaymentsPhoneChargeLiftingEnabled = false;
+
+    </script>
+
+    <script src="/or/AuthService/js" type="text/javascript"></script>
+    
+    <script type="text/javascript" src="/venezia/main.js?v=117BBDC3"></script>
+    
+    
+    <iframe name="AppletFrame" title="aria-applet-title" role="presentation" aria-hidden="true" tabindex="-1" src="/csite/top.aspx" scrolling="no" frameborder="0" noresize="noresize" width="0" height="0"></iframe>
+</body>
+</html>
