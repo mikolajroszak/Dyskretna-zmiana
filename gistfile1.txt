@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<jnlp 
+    spec="1.0+"
+    codebase="https://etrader.cdm24.pl/static" 
+    href="eTraderCDM.jnlp">
+
+  <information  os="Windows">
+        <title>Platforma inwestycyjna eTrader</title>
+        <vendor>CDM Pekao S.A.</vendor>
+        <homepage href=""/>
+        <description>Platforma inwestycyjna eTrader</description>
+        <description kind="short">Platforma inwestycyjna eTrader</description>
+        <icon kind="default" href="png/eTrader_default_32x32_red.png" width="32" height="32" />
+        <!--icon kind="splash"  href="eTrader_splash_64x64.png" width="64" height="64" /-->
+        <icon kind="shortcut" href="png/icon_32x32.ico" width="32" height="32"/>
+	<icon href="png/etrader_shortcut_32x32_red.ico" kind="shortcut" />
+	<icon href="png/eTrader_64x64_red.png" width="64" height="64" />
+
+        <offline-allowed />
+        <shortcut online="true">
+            <desktop/>
+        </shortcut>       
+    </information>
+    
+    
+    <information  os="Linux">
+        <title>eTrader</title>
+        <vendor>CDM Pekao S.A.</vendor>
+        <homepage href=""/>
+        <description>Platforma inwestycyjna eTrader</description>
+        <description kind="short">Platforma inwestycyjna eTrader</description>
+        <icon kind="default" href="./png/eTrader_default_32x32_red.png " width="32" height="32" />
+        <!--icon kind="splash"  href="eTrader_splash_64x64.png" width="64" height="64" /-->
+	<icon href="png/etrader_shortcut_32x32_red.png" kind="shortcut" />
+	<icon href="png/eTrader_64x64_red.png" width="64" height="64" />
+        <offline-allowed />
+        <shortcut online="true">
+            <desktop/>
+        </shortcut>       
+    </information>
+    
+    
+    <information  os="Mac">
+        <title>Platforma inwestycyjna eTrader</title>
+        <vendor>CDM Pekao S.A.</vendor>
+        <homepage href=""/>
+        <description>Platforma inwestycyjna eTrader</description>
+        <description kind="short">Platforma inwestycyjna eTrader</description>
+        <icon kind="default" href="png/eTrader_default_32x32_red.png " width="32" height="32" />
+        <!--icon kind="splash"  href="eTrader_splash_64x64.png" width="64" height="64" /-->
+        <icon href="png/eTrader_default_32x32_red.png" kind="shortcut" />
+	<icon href="png/eTrader_64x64_red.png" width="64" height="64" />
+        <offline-allowed />
+        <shortcut online="true">
+            <desktop/>
+        </shortcut>       
+    </information>
+
+
+    <security>
+     <all-permissions/>
+    </security>
+    
+    
+    <resources>
+        <j2se version="1.8" initial-heap-size="256m" max-heap-size="1024m"/>
+        <j2se version="9+" initial-heap-size="256m" max-heap-size="1024m" java-vm-args="--add-modules=java.xml.bind 
+            --add-exports=java.desktop/sun.swing=ALL-UNNAMED 
+            --add-exports=java.desktop/sun.swing.table=ALL-UNNAMED 
+            --add-exports=java.desktop/sun.swing.plaf.synth=ALL-UNNAMED 
+            --add-opens=java.desktop/javax.swing.plaf.synth=ALL-UNNAMED 
+            --add-opens=java.desktop/javax.swing.plaf.basic=ALL-UNNAMED 
+            --add-opens=java.desktop/javax.swing=ALL-UNNAMED 
+            --add-opens=java.desktop/javax.swing.tree=ALL-UNNAMED 
+            --add-opens=java.desktop/java.awt.event=ALL-UNNAMED
+            --add-opens=java.desktop/java.awt=ALL-UNNAMED
+            --add-opens=java.desktop/java.awt.color=ALL-UNNAMED
+            --add-exports=java.desktop/com.sun.java.swing.plaf.windows=ALL-UNNAMED 
+            --add-exports=java.desktop/sun.awt.shell=ALL-UNNAMED 
+            --add-exports=java.desktop/com.sun.awt=ALL-UNNAMED 
+            --add-exports=java.base/sun.security.action=ALL-UNNAMED 
+            --add-opens=javafx.controls/javafx.scene.control=ALL-UNNAMED 
+            --add-opens=javafx.controls/com.sun.javafx.charts=ALL-UNNAMED 
+            --add-opens=java.base/java.util=ALL-UNNAMED 
+            --add-opens=java.base/java.util.concurrent.atomic=ALL-UNNAMED" />
+
+        <property name="jnlp.packEnabled" value="true"/>
+        <property name="jnlp.eTrader.profile" value="default"/> 
+        <property name="jnlp.eTrader.manualLogin" value="true"/> 
+        <property name="jnlp.eTrader.brokerageHouse" value="CDM"/>
+        <property name="jnlp.eTrader.clientType" value="CLIENT"/>
+        <property name="jnlp.eTrader.server" value="https://etrader.cdm24.pl/rest/api"/>
+        <property name="jnlp.eTrader.applicationStateServer" value="https://etrader.cdm24.pl/state/api"/>
+        <jar href="jar/eTrader-1.0.72.jar" main="true" />
+        <!--<jar href="jar2/eTraderLoader-1.0.65x.jar" download="progress" />-->
+    </resources>
+
+
+    <application-desc main-class="etrader.ETrader"  > 
+    </application-desc>
+
+</jnlp>
